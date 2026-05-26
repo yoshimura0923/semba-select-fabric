@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SENBA SELECT FABRIC | 船場の生地をあなたへ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2e44;
+    --navy-light: #2c4a6e;
+    --gold: #b8976a;
+    --gold-light: #d4b896;
+    --cream: #f8f5f0;
+    --white: #ffffff;
+    --gray-100: #f5f4f1;
+    --gray-200: #e8e5e0;
+    --gray-400: #b0a99e;
+    --gray-600: #6b6358;
+    --gray-800: #3a3530;
+    --text: #2a2520;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ヘッダー */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+
+  .logo-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.08em;
+    display: block;
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    color: var(--gray-600);
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--gray-800);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--navy); }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .header-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray-600);
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 8px;
+    transition: color 0.2s;
+  }
+
+  .header-actions button:hover { color: var(--navy); }
+
+  .header-actions button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .lang-toggle button {
+    padding: 4px 10px !important;
+    border: none !important;
+    font-size: 12px !important;
+    flex-direction: row !important;
+    gap: 0 !important;
+  }
+
+  .lang-toggle button.active {
+    background: var(--navy);
+    color: var(--white) !important;
+  }
+
+  /* ヒーロー */
+  .hero {
+    position: relative;
+    height: 480px;
+    background: linear-gradient(135deg, #e8e2d8 0%, #d4cfc8 40%, #c8c2b8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.15) 2px,
+        rgba(255,255,255,0.15) 4px
+      );
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 0 40px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .hero p {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-bottom: 32px;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 14px 40px;
+    font-size: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: var(--radius);
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-primary:hover {
+    background: var(--navy-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+    padding: 14px 40px;
+    font-size: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: var(--radius);
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--gray-100);
+    transform: translateY(-1px);
+  }
+
+  .hero-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .hero-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-400);
+  }
+
+  .hero-dots span.active {
+    background: var(--navy);
+  }
+
+  /* セクション共通 */
+  section {
+    padding: 56px 40px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.03em;
+  }
+
+  .section-more {
+    font-size: 13px;
+    color: var(--navy);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s;
+  }
+
+  .section-more:hover { gap: 8px; }
+
+  /* カテゴリフィルター */
+  .category-filter {
+    padding: 20px 40px;
+    background: var(--gray-100);
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .category-label {
+    font-size: 12px;
+    color: var(--gray-600);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .category-pills {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .category-pills::-webkit-scrollbar { display: none; }
+
+  .pill {
+    flex-shrink: 0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    color: var(--gray-800);
+    transition: all 0.2s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .pill:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+  }
+
+  .pill.active {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  /* 商品グリッド */
+  .products { background: var(--white); }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .product-img {
+    position: relative;
+    height: 180px;
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .product-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgba(0,0,0,0.04) 8px,
+        rgba(0,0,0,0.04) 9px
+      );
+  }
+
+  .product-img span {
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tenant-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--gray-200);
+    border-radius: 3px;
+    font-size: 10px;
+    padding: 2px 6px;
+    color: var(--gray-600);
+    z-index: 2;
+  }
+
+  .product-info {
+    padding: 14px 16px 16px;
+  }
+
+  .product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .material-tag {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--gold);
+    border: 1px solid var(--gold-light);
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .product-price span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gray-600);
+  }
+
+  .product-moq {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-bottom: 12px;
+  }
+
+  .btn-cart {
+    width: 100%;
+    padding: 9px 0;
+    background: var(--white);
+    border: 1.5px solid var(--navy);
+    color: var(--navy);
+    font-size: 13px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-cart:hover {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  /* テナント一覧 */
+  .tenants {
+    background: var(--gray-100);
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .tenant-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .tenant-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px 16px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+
+  .tenant-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .tenant-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--gray-200);
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tenant-logo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.06);
+  }
+
+  .tenant-logo svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gray-400);
+  }
+
+  .tenant-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .tenant-specialty {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--gold);
+    border: 1px solid var(--gold-light);
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+
+  .tenant-count {
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  .tenant-count strong {
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  /* ご利用の流れ */
+  .how-it-works {
+    background: var(--navy);
+    padding: 56px 40px;
+  }
+
+  .how-it-works .section-title {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .step {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .step-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .step-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold-light);
+  }
+
+  .step-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+
+  .step-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+  }
+
+  .step-arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    color: var(--gold);
+    font-size: 20px;
+  }
+
+  /* フッター */
+  footer {
+    background: var(--gray-800);
+    color: rgba(255,255,255,0.7);
+    padding: 48px 40px 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .footer-tagline {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-desc {
+    font-size: 12px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+
+  .footer-sns {
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-sns a {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+
+  .footer-sns a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--white); }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .contact-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--gold);
+  }
+
+  .credit-badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 3px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.03em;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 768px) {
+    header { padding: 0 16px; }
+    nav { display: none; }
+    section { padding: 40px 16px; }
+    .category-filter { padding: 16px; }
+    .hero { height: 360px; }
+    .hero h1 { font-size: 24px; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .tenant-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { flex-direction: column; align-items: center; gap: 32px; }
+    .step-arrow { transform: rotate(90deg); padding-top: 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .how-it-works { padding: 40px 16px; }
+    footer { padding: 40px 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <a href="#" class="logo">
+    <span class="logo-main">SENBA SELECT FABRIC</span>
+    <span class="logo-sub">船場の生地をあなたへ</span>
+  </a>
+  <nav>
+    <a href="#">トップ</a>
+    <a href="#">生地を探す</a>
+    <a href="#">テナント一覧</a>
+    <a href="#">使い方</a>
+  </nav>
+  <div class="header-actions">
+    <button aria-label="検索">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      検索
+    </button>
+    <button aria-label="カート">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      カート
+    </button>
+    <div class="lang-toggle">
+      <button class="active">JP</button>
+      <button>EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>船場の生地と、ものづくりをつなぐ</h1>
+    <p>高品質な生地を、必要な分だけ、安心してお取引。</p>
+    <div class="hero-btns">
+      <button class="btn-primary">生地を探す</button>
+      <button class="btn-secondary">出品する</button>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+
+<!-- カテゴリフィルター -->
+<div class="category-filter">
+  <p class="category-label">生地の種類から探す</p>
+  <div class="category-pills">
+    <button class="pill active">すべて</button>
+    <button class="pill">綿・コットン</button>
+    <button class="pill">ウール</button>
+    <button class="pill">化繊</button>
+    <button class="pill">裏地</button>
+    <button class="pill">副資材</button>
+    <button class="pill">はぎれ・端切れ</button>
+    <button class="pill">シルク</button>
+    <button class="pill">リネン</button>
+  </div>
+</div>
+
+<!-- 商品グリッド -->
+<section class="products">
+  <div class="section-header">
+    <h2 class="section-title">おすすめの生地</h2>
+    <a href="#" class="section-more">すべて見る →</a>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-img">
+        <span class="tenant-badge">○○商店</span>
+        <span>生地写真</span>
+      </div>
+      <div class="product-info">
+        <p class="product-name">綿シーチング 無地</p>
+        <span class="material-tag">綿・コットン</span>
+        <p class="product-price">¥980 <span>/m</span></p>
+        <p class="product-moq">最小注文数：1m</p>
+        <button class="btn-cart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          カートに追加
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <span class="tenant-badge">○○商店</span>
+        <span>生地写真</span>
+      </div>
+      <div class="product-info">
+        <p class="product-name">ウールメルトン 生地</p>
+        <span class="material-tag">ウール</span>
+        <p class="product-price">¥2,480 <span>/m</span></p>
+        <p class="product-moq">最小注文数：1m</p>
+        <button class="btn-cart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          カートに追加
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <span class="tenant-badge">○○商店</span>
+        <span>生地写真</span>
+      </div>
+      <div class="product-info">
+        <p class="product-name">ポリエステルツイル</p>
+        <span class="material-tag">化繊</span>
+        <p class="product-price">¥780 <span>/m</span></p>
+        <p class="product-moq">最小注文数：1m</p>
+        <button class="btn-cart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          カートに追加
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <span class="tenant-badge">○○商店</span>
+        <span>生地写真</span>
+      </div>
+      <div class="product-info">
+        <p class="product-name">キュプラ裏地 ベンベルグ</p>
+        <span class="material-tag">裏地</span>
+        <p class="product-price">¥600 <span>/m</span></p>
+        <p class="product-moq">最小注文数：1m</p>
+        <button class="btn-cart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          カートに追加
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <span class="tenant-badge">○○商店</span>
+        <span>生地写真</span>
+      </div>
+      <div class="product-info">
+        <p class="product-name">接着芯 薄手タイプ</p>
+        <span class="material-tag">副資材</span>
+        <p class="product-price">¥450 <span>/m</span></p>
+        <p class="product-moq">最小注文数：1m</p>
+        <button class="btn-cart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          カートに追加
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <span class="tenant-badge">○○商店</span>
+        <span>生地写真</span>
+      </div>
+      <div class="product-info">
+        <p class="product-name">はぎれセット 無地MIX</p>
+        <span class="material-tag">はぎれ・端切れ</span>
+        <p class="product-price">¥500 <span>/セット</span></p>
+        <p class="product-moq">最小注文数：1セット</p>
+        <button class="btn-cart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          カートに追加
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- テナント一覧 -->
+<section class="tenants">
+  <div class="section-header">
+    <h2 class="section-title">出品テナント一覧</h2>
+    <a href="#" class="section-more">すべて見る →</a>
+  </div>
+  <div class="tenant-grid">
+
+    <div class="tenant-card">
+      <div class="tenant-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      </div>
+      <p class="tenant-name">船場テキスタイル</p>
+      <span class="tenant-specialty">綿・天然素材専門</span>
+      <p class="tenant-count">出品数：<strong>128</strong>点</p>
+    </div>
+
+    <div class="tenant-card">
+      <div class="tenant-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      </div>
+      <p class="tenant-name">○○商店</p>
+      <span class="tenant-specialty">ウール・化繊専門</span>
+      <p class="tenant-count">出品数：<strong>96</strong>点</p>
+    </div>
+
+    <div class="tenant-card">
+      <div class="tenant-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      </div>
+      <p class="tenant-name">生地のマルイ</p>
+      <span class="tenant-specialty">裏地・副資材専門</span>
+      <p class="tenant-count">出品数：<strong>84</strong>点</p>
+    </div>
+
+    <div class="tenant-card">
+      <div class="tenant-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+      </div>
+      <p class="tenant-name">テキスタイル山口</p>
+      <span class="tenant-specialty">はぎれ・特価品専門</span>
+      <p class="tenant-count">出品数：<strong>68</strong>点</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ご利用の流れ -->
+<section class="how-it-works">
+  <h2 class="section-title">ご利用の流れ</h2>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <p class="step-title">生地を探す</p>
+      <p class="step-desc">豊富な生地の中から、<br>用途に合った生地を探します。</p>
+    </div>
+
+    <div class="step-arrow">→</div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <p class="step-title">テナントに問い合わせ</p>
+      <p class="step-desc">気になる生地は、テナントに<br>問い合わせて確認します。</p>
+    </div>
+
+    <div class="step-arrow">→</div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <p class="step-title">購入・受け取り</p>
+      <p class="step-desc">条件を確認後、購入手続き。<br>生地を受け取ります。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <p class="footer-logo">SENBA SELECT FABRIC</p>
+      <p class="footer-tagline">船場の生地をあなたへ</p>
+      <p class="footer-desc">大阪・船場の生地を、全国・世界の<br>ものづくりに届けるマーケットプレイス。<br>小ロットから仕入れ可能。<br>新しい生地との出会いをサポートします。</p>
+      <div class="footer-sns">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Twitter">TW</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>ナビゲーション</h4>
+      <ul>
+        <li><a href="#">トップ</a></li>
+        <li><a href="#">生地を探す</a></li>
+        <li><a href="#">テナント一覧</a></li>
+        <li><a href="#">使い方</a></li>
+        <li><a href="#">出品する</a></li>
+        <li><a href="#">よくあるご質問</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>お問い合わせ</h4>
+      <div class="footer-contact">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@senbaselectfabric.jp
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          06-0000-0000（平日 9:00-17:00）
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          大阪府大阪市中央区船場中央<br>1-4-3 船場センタービル○号館
+        </div>
+        <span class="credit-badge">制作：ダイトー光芸株式会社</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    © 2024 SENBA SELECT FABRIC All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
